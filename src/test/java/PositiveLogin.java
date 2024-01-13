@@ -61,6 +61,8 @@ public class PositiveLogin {
        // 10. Verify that 'ACCOUNT DELETED!' is visible
 
         driver.findElement(By.xpath("//*[text() = \"Account Deleted!\"]")).isDisplayed();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.close();
 
     }
 }
