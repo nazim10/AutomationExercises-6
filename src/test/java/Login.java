@@ -14,7 +14,7 @@ import org.testng.asserts.Assertion;
 
 import java.time.Duration;
 
-public class ActionClass {
+public class Login {
 
     @Test
     public void ActionTest() {
