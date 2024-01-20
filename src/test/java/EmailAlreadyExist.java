@@ -1,7 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -9,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class LogoutUser {
+public class EmailAlreadyExist {
 
 
     @Test
@@ -59,7 +58,7 @@ public class LogoutUser {
         WebDriver driver2 = new FirefoxDriver();
         driver2.get("https://automationexercise.com/");
         driver2.manage().window().maximize();
-        driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
         driver2.findElement(By.xpath("//a[@href =\"/login\"]")).click();
         driver2.findElement(By.xpath("//input[@name=\"name\"]")).click();
@@ -75,6 +74,7 @@ public class LogoutUser {
         //8. Verify error 'Email Address already exist!' is visible
 
         driver2.findElement(By.xpath("//*[text() = \"Email Address already exist!\"]")).isDisplayed();
+        driver2.close();
 
     }
 }
